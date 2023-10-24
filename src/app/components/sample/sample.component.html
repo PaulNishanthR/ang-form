@@ -1,0 +1,49 @@
+<!-- <p>sample works!</p> -->
+<div class="div">
+  <div class="container my-4">
+    <div class="col"></div>
+    <div class="col">
+      <div class="my-2">
+        <input type="hidden" id="id" />
+      </div>
+      <div class="my-2">
+        <input type="text" placeholder="Enter name" [(ngModel)]="name" />
+      </div>
+      <div class="my-2">
+        <input type="text" placeholder="Enter phone" [(ngModel)]="phone" />
+      </div>
+      <div class="my-2">
+        <input type="text" placeholder="Enter email" [(ngModel)]="email" />
+      </div>
+      <div class="my-2">
+        <button (click)="add()">{{ btnText }}</button>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">phone</th>
+      <th scope="col">email</th>
+      <th scope="colspan-2">action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of users">
+    <tr>
+      <td scope="col">{{ user.id }}</td>
+      <td scope="col">{{ user.name }}</td>
+      <td scope="col">{{ user.phone }}</td>
+      <td scope="col">{{ user.email }}</td>
+      <td>
+        <button (click)="edit(user.id)">Edit</button>
+
+        <button (click)="delete(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
